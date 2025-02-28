@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tarea_integradora/screens/calif/calificaciones_soporte_screen.dart';
+import 'package:tarea_integradora/screens/roles/roles_screen.dart';
 import 'package:tarea_integradora/screens/users/users_screen.dart';
 import 'login_screen.dart';
 import '../config/settings_screen.dart';
@@ -138,6 +139,17 @@ class _MainScreenState extends State<MainScreen> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => UsersScreen(userRole: widget.rol, userId: widget.id, userNombre:widget.nombre, userCorreo: widget.correo),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Roles'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RolesScreen(userRole: widget.rol, userId: widget.id, userNombre:widget.nombre, userCorreo: widget.correo),
                     ),
                   );
                 },

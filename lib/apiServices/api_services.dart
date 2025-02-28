@@ -293,4 +293,22 @@ class ApiServices {
       throw Exception('Error al actualizar el usuario: ${response.statusCode}');
     }
   }
+
+  static Future<Map<String, dynamic>> createRol(String nombre) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/roles'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, dynamic>{
+        'rol': nombre,
+      }),
+    );
+    if (response.statusCode == 200) {
+      final responseJson = jsonDecode(response.body);
+      return responseJson;
+    } else {
+      throw Exception('Error al crear el ticket: ${response.statusCode}');
+    }
+  }
 }

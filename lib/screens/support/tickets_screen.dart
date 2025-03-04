@@ -71,7 +71,9 @@ class _TicketsScreenState extends State<TicketsScreen> {
         return false;
       },
       child: Scaffold(
+        backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
         appBar: AppBar(
+          backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
           title: Text("Tickets"),
         ),
         body: Center(

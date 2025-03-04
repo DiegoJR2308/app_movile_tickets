@@ -55,8 +55,11 @@ class _CalificacionesSoporteScreenState extends State<CalificacionesSoporteScree
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
+      backgroundColor: isDarkMode ? Color(0xff282828) : const Color.fromARGB(255, 247, 247, 247),
       appBar: AppBar(
+        backgroundColor: isDarkMode ? Color(0xff282828) : const Color.fromARGB(255, 247, 247, 247),
         title: Text('Calificaciones de Soporte'),
       ),
       body: isLoading

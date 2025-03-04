@@ -42,7 +42,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
+      backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
       appBar: AppBar(
+        backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
         title: Text('CREAR CUENTA'),
       ),
       body: Center(

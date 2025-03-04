@@ -76,10 +76,13 @@ class _MainScreenState extends State<MainScreen> {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
+      backgroundColor: isDarkMode ? Color(0xff282828) : const Color.fromARGB(255, 247, 247, 247),
       appBar: AppBar(
+        backgroundColor: isDarkMode ? Color(0xff282828) : const Color.fromARGB(255, 247, 247, 247),
         title: Text('Codex services'),
       ),
       drawer: Drawer(
+        backgroundColor: isDarkMode ? Color(0xff282828) : const Color.fromARGB(255, 247, 247, 247),
         child: Column(
           children: <Widget>[
             UserAccountsDrawerHeader(
@@ -115,14 +118,15 @@ class _MainScreenState extends State<MainScreen> {
               ),
               decoration: BoxDecoration(
                 color: isDarkMode ?
-                Color.fromRGBO(130, 8, 252, 0.764)
+                Color(0xff320064)
                 :
-                Color.fromRGBO(187, 120, 255, 0.75),
+                Color(0xffbb86fc),
               ),
             ),
             if (widget.rol == 'Administrador') ...[
               ListTile(
-                title: Text('Tickets'),
+                leading: Icon(Icons.message),
+                title: Text('Tickets',style: TextStyle(fontSize: 16)),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -133,7 +137,8 @@ class _MainScreenState extends State<MainScreen> {
                 },
               ),
               ListTile(
-                title: Text('Usuarios'),
+                leading: Icon(Icons.groups_sharp),
+                title: Text('Usuarios',style: TextStyle(fontSize: 16)),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -144,7 +149,8 @@ class _MainScreenState extends State<MainScreen> {
                 },
               ),
               ListTile(
-                title: Text('Roles'),
+                leading: Icon(Icons.account_tree),
+                title: Text('Roles',style: TextStyle(fontSize: 16)),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -155,7 +161,8 @@ class _MainScreenState extends State<MainScreen> {
                 },
               ),
               ListTile(
-              title: Text('Configuración'),
+                leading: Icon(Icons.settings),
+              title: Text('Configuración',style: TextStyle(fontSize: 16)),
               onTap: () {
                 Navigator.push(
                   context,
@@ -165,7 +172,8 @@ class _MainScreenState extends State<MainScreen> {
             ),
             ] else if (widget.rol == 'Operador') ...[
               ListTile(
-                title: Text('Tickets'),
+                leading: Icon(Icons.message),
+                title: Text('Tickets',style: TextStyle(fontSize: 16)),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -176,7 +184,8 @@ class _MainScreenState extends State<MainScreen> {
                 },
               ),
               ListTile(
-                title: Text('Usuarios'),
+                leading: Icon(Icons.group_sharp),
+                title: Text('Usuarios',style: TextStyle(fontSize: 16)),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -187,7 +196,8 @@ class _MainScreenState extends State<MainScreen> {
                 },
               ),
               ListTile(
-                title: Text('Mis calificaciones'),
+                leading: Icon(Icons.star),
+                title: Text('Mis calificaciones',style: TextStyle(fontSize: 16)),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -198,7 +208,8 @@ class _MainScreenState extends State<MainScreen> {
                 },
               ),
               ListTile(
-              title: Text('Configuración'),
+                leading: Icon(Icons.settings),
+              title: Text('Configuración',style: TextStyle(fontSize: 16)),
               onTap: () {
                 Navigator.push(
                   context,
@@ -208,7 +219,8 @@ class _MainScreenState extends State<MainScreen> {
             ),
             ] else if (widget.rol == 'Cliente') ...[
               ListTile(
-                title: Text('Tickets'),
+                leading: Icon(Icons.message),
+                title: Text('Tickets',style: TextStyle(fontSize: 16)),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -219,13 +231,14 @@ class _MainScreenState extends State<MainScreen> {
                 },
               ),
               ListTile(
-                title: Text('Opción Cliente 2'),
+                title: Text('Opción Cliente 2',style: TextStyle(fontSize: 16)),
                 onTap: () {
                   // Acción para la opción Cliente 2
                 },
               ),
               ListTile(
-              title: Text('Configuración'),
+                leading: Icon(Icons.settings),
+              title: Text('Configuración',style: TextStyle(fontSize: 16)),
               onTap: () {
                 Navigator.push(
                   context,
@@ -235,7 +248,8 @@ class _MainScreenState extends State<MainScreen> {
             ),
             ],
             ListTile(
-              title: Text(widget.rol == 'Invitado' ? 'Login' : 'Logout'),
+              leading: Icon(widget.rol == 'Invitado' ? Icons.login : Icons.logout),
+              title: Text(widget.rol == 'Invitado' ? 'Login' : 'Logout', style: TextStyle(fontSize: 16),),
               onTap: () {
                 if (widget.rol == 'Invitado') {
                   Navigator.push(
@@ -251,7 +265,7 @@ class _MainScreenState extends State<MainScreen> {
             Align(
               alignment: Alignment.bottomLeft,
               child: ListTile(
-                title: Text('Modo Oscuro'),
+                title: Text('Modo Oscuro',style: TextStyle(fontSize: 16)),
                 trailing: Icon(
                   themeProvider.themeMode == ThemeMode.dark
                       ? Icons.nights_stay

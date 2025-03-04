@@ -89,8 +89,9 @@ class _UserAccountScreenState extends State<UserAccountScreen> {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: isDarkMode ? const Color.fromARGB(255, 30, 30, 30) : Colors.white,
+      backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
       appBar: AppBar(
+        backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
         //backgroundColor: Color(0x44000000),
         //backgroundColor: Colors.transparent,
         elevation: 0,

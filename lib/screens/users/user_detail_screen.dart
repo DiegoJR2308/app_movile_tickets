@@ -53,7 +53,9 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
+      backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
       appBar: AppBar(
+        backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
         title: Text('Detalle de Usuario'),
       ),
       body: isLoading

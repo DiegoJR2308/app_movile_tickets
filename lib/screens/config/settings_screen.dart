@@ -11,9 +11,11 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
-
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
+      backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
       appBar: AppBar(
+        backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
         title: Text('Configuración'),
       ),
       body: Padding(
@@ -28,14 +30,14 @@ class SettingsScreen extends StatelessWidget {
                     ? Icons.nights_stay
                     : Icons.wb_sunny,
               ),
-              activeColor: Color.fromRGBO(8, 115, 252, 1),
+              activeColor: Color(0xffbb86fc),
               onChanged: (bool value) {
                 themeProvider.toggleTheme(value);
               },
             ),
             ListTile(
               title: Text('Cuenta'),
-              leading: Icon(Icons.account_circle),
+              leading: Icon(Icons.manage_accounts),
               onTap: () {
                 Navigator.push(
                   context,

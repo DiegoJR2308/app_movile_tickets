@@ -15,7 +15,6 @@ class RolesScreen extends StatefulWidget {
       required this.userId,
       required this.userNombre,
       required this.userCorreo});
-
   @override
   _RolesScreenState createState() => _RolesScreenState();
 }
@@ -49,8 +48,7 @@ class _RolesScreenState extends State<RolesScreen> {
               id: widget.userId,
               rol: widget.userRole,
               nombre: widget.userNombre,
-              correo: widget
-                  .userCorreo)), // Asegúrate de proporcionar cualquier argumento necesario
+              correo: widget.userCorreo)),
     );
     return true;
   }
@@ -61,7 +59,9 @@ class _RolesScreenState extends State<RolesScreen> {
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
+        backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
         appBar: AppBar(
+          backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
           title: Text("Roles"),
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
@@ -73,8 +73,7 @@ class _RolesScreenState extends State<RolesScreen> {
                         id: widget.userId,
                         rol: widget.userRole,
                         nombre: widget.userNombre,
-                        correo: widget
-                            .userCorreo)), // Asegúrate de proporcionar cualquier argumento necesario
+                        correo: widget.userCorreo)),
               );
             },
           ),
@@ -85,7 +84,7 @@ class _RolesScreenState extends State<RolesScreen> {
               : ListView.builder(
                   itemCount: roles.length,
                   itemBuilder: (context, index) {
-                    final usuario = roles[index];
+                    final rol = roles[index];
                     return GestureDetector(
                       onTap: widget.userRole == 'Administrador'
                           ? () {
@@ -121,7 +120,7 @@ class _RolesScreenState extends State<RolesScreen> {
                             ),
                             SizedBox(height: 10),
                             Text(
-                              ' ${usuario['nombre']}',
+                              ' ${rol['nombre']}',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,

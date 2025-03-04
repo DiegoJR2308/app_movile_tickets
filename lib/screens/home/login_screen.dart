@@ -46,6 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
+      backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
       body: Center(
         child: Container(
           width: 300,

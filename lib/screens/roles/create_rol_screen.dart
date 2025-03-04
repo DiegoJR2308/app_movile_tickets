@@ -33,7 +33,9 @@ class _CreateRolScreenState extends State<CreateRolScreen> {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
+      backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
       appBar: AppBar(
+        backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
         title: Text('CREAR ROL'),
       ),
       body: Center(

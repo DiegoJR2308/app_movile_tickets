@@ -50,7 +50,9 @@ class _UsersScreenState extends State<UsersScreen> {
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
+        backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
         appBar: AppBar(
+          backgroundColor: isDarkMode ? Color(0xff282828) : Colors.white,
           title: Text("Usuarios"),
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
